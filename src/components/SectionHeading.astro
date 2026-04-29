@@ -1,0 +1,13 @@
+---
+type Props = {
+  title: string;
+  command?: string;
+};
+
+const { title, command } = Astro.props;
+---
+
+<div class="section-heading">
+  <h2># {title}</h2>
+  {command && <span>{command}</span>}
+</div>

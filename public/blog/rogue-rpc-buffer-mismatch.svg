@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">Rogue RPC node buffer mismatch</title>
+  <desc id="desc">A deployer sees expected buffer bytes from an RPC node while the chain buffer is missing one write chunk.</desc>
+  <rect width="920" height="430" rx="18" fill="#1e1e2e"/>
+  <rect x="24" y="24" width="872" height="382" rx="14" fill="#242438" stroke="#45475a"/>
+  <text x="46" y="64" fill="#a6e3a1" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" font-weight="700">rogue RPC node buffer deploy</text>
+  <text x="46" y="96" fill="#9399b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14">getAccount returns the expected account, while chain state is missing a write</text>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15">
+    <rect x="48" y="138" width="168" height="54" rx="8" fill="#313244" stroke="#89dceb"/>
+    <text x="76" y="171" fill="#cdd6f4">deployer</text>
+    <path d="M216 165 H326" stroke="#89dceb" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="232" y="149" fill="#89dceb" font-size="13">getAccount</text>
+
+    <rect x="326" y="138" width="188" height="54" rx="8" fill="#313244" stroke="#f9e2af"/>
+    <text x="352" y="171" fill="#cdd6f4">RPC node</text>
+    <path d="M514 165 H624" stroke="#f9e2af" stroke-width="3" marker-end="url(#arrow-yellow)"/>
+    <text x="535" y="149" fill="#f9e2af" font-size="13">expected bytes</text>
+
+    <rect x="624" y="138" width="236" height="54" rx="8" fill="#1e1e2e" stroke="#a6e3a1"/>
+    <text x="646" y="171" fill="#a6e3a1">verified-looking buffer</text>
+  </g>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+    <text x="48" y="245" fill="#cdd6f4" font-size="15">expected buffer</text>
+    <g transform="translate(210 218)">
+      <rect width="138" height="46" rx="7" fill="#313244" stroke="#89b4fa"/>
+      <rect x="148" width="138" height="46" rx="7" fill="#313244" stroke="#89b4fa"/>
+      <rect x="296" width="198" height="46" rx="7" fill="#313244" stroke="#a6e3a1"/>
+      <rect x="504" width="138" height="46" rx="7" fill="#313244" stroke="#89b4fa"/>
+      <text x="34" y="29" fill="#cdd6f4" font-size="13">write 0</text>
+      <text x="182" y="29" fill="#cdd6f4" font-size="13">write 1</text>
+      <text x="324" y="29" fill="#a6e3a1" font-size="13">rodata: program id</text>
+      <text x="538" y="29" fill="#cdd6f4" font-size="13">write 3</text>
+    </g>
+
+    <text x="48" y="325" fill="#cdd6f4" font-size="15">chain buffer</text>
+    <g transform="translate(210 298)">
+      <rect width="138" height="46" rx="7" fill="#313244" stroke="#89b4fa"/>
+      <rect x="148" width="138" height="46" rx="7" fill="#313244" stroke="#89b4fa"/>
+      <rect x="296" width="198" height="46" rx="7" fill="#451f2d" stroke="#f38ba8"/>
+      <rect x="504" width="138" height="46" rx="7" fill="#313244" stroke="#89b4fa"/>
+      <text x="34" y="29" fill="#cdd6f4" font-size="13">write 0</text>
+      <text x="182" y="29" fill="#cdd6f4" font-size="13">write 1</text>
+      <text x="328" y="29" fill="#f38ba8" font-size="13">missing: 0000...</text>
+      <text x="538" y="29" fill="#cdd6f4" font-size="13">write 3</text>
+    </g>
+  </g>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#89dceb"/>
+    </marker>
+    <marker id="arrow-yellow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f9e2af"/>
+    </marker>
+  </defs>
+</svg>

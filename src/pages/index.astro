@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import PostList from '../components/PostList.astro';
+import ProjectList from '../components/ProjectList.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { projects } from '../data/projects';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 5);
+---
+
+<Layout>
+  <section class="hero">
+    <p class="prompt">$ whoami</p>
+    <h1>Software Engineer, building on Solana.</h1>
+  </section>
+
+  <section class="section">
+    <SectionHeading title="projects" command="ls ~/work" />
+    <ProjectList projects={projects} />
+  </section>
+
+  <section class="section">
+    <SectionHeading title="latest notes" command="tail -n 3 ./blog" />
+    <PostList posts={posts} />
+  </section>
+</Layout>

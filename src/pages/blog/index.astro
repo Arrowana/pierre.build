@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PostList from '../../components/PostList.astro';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Layout title="Blog" description="Markdown notes from Pierre.">
+  <section class="page-header">
+    <p class="prompt">$ find ./blog -type f</p>
+    <h1># blog</h1>
+    <p>Short notes on protocols, signing flows, verification, and tooling.</p>
+  </section>
+  <PostList posts={posts} />
+</Layout>
