@@ -10,10 +10,8 @@
   <text x="238" y="132" fill="#9399b2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="26">pierre.build</text>
 
   <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
-    <text x="96" y="246" fill="#a6e3a1" font-size="34" font-weight="700">$ whoami</text>
-    <text x="96" y="328" fill="#f5c2e7" font-size="62" font-weight="800">Software Engineer,</text>
-    <text x="96" y="404" fill="#f5c2e7" font-size="62" font-weight="800">building on Solana.</text>
-    <text x="96" y="486" fill="#89dceb" font-size="30">Stuff from Pierre</text>
+    <text x="96" y="338" fill="#f5c2e7" font-size="72" font-weight="800">Don't trust</text>
+    <text x="96" y="430" fill="#f5c2e7" font-size="72" font-weight="800">the bytes.</text>
   </g>
 
   <g transform="translate(844 224)">

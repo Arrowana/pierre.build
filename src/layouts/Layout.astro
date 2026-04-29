@@ -10,7 +10,7 @@ type Props = {
 const siteTitle = 'pierre.build';
 const description =
   Astro.props.description ??
-  'Stuff from Pierre';
+  'Sharp notes on Solana trust boundaries.';
 const pageTitle = Astro.props.title ? `${Astro.props.title} - ${siteTitle}` : siteTitle;
 const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(/\/$/, '');
 const socialImage = new URL('/social-card.png', Astro.site).href;

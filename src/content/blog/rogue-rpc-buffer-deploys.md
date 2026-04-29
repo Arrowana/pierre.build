@@ -1,6 +1,6 @@
 ---
 title: Rogue RPC node buffer deploys
-description: A compromised RPC node can make a Solana upgrade buffer look complete while hiding a missing write.
+description: A rogue RPC node can make a corrupted upgrade buffer look clean.
 category: security
 pubDate: 2026-04-29
 tags:

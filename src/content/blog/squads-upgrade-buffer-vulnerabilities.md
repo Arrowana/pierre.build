@@ -1,6 +1,6 @@
 ---
 title: Squads upgrade buffer vulnerabilities
-description: Two ways upgrade buffers can break the mental model of multisig-approved program upgrades.
+description: Two upgrade-buffer tricks that can make multisig approval drift from execution.
 category: security
 pubDate: 2026-04-29
 tags:

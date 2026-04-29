@@ -1,6 +1,6 @@
 ---
 title: Upgrade buffer remediation, upgrade buffer validation
-description: Notes on self-validating approvals for upgrade buffers and multisig execution.
+description: Make the approval prove the bytes before the vote can land.
 category: security
 pubDate: 2026-04-29
 tags:

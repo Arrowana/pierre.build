@@ -1,6 +1,6 @@
 ---
 title: Multisig transaction flow
-description: A compact view of what create, vote, and execute reference in a Squads transaction.
+description: What a Squads signer should inspect before approving anything.
 category: security
 pubDate: 2026-04-29
 tags:
