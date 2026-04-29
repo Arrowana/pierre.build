@@ -1,28 +1,23 @@
 ---
-title: Program upgrades and multisig
-description: "A short model for Solana upgrades: the loader owns the deployable bytes, the authority owns the change."
+title: Multisig transaction flow
+description: A compact view of what create, vote, and execute reference in a Squads transaction.
 category: security
 pubDate: 2026-04-29
 tags:
   - solana
   - security
-  - upgrades
+  - multisig
 ---
 
-A Solana program is executable data. If it was deployed with the upgradeable
-loader, the program points at a program data account that stores the bytes and
-the upgrade authority.
+Create writes the transaction account. The proposal tracks status and votes.
+Vote references the proposal. Execute reads the transaction account and runs the
+stored message.
 
-An upgrade is just a controlled replacement of those bytes. The upgrade
-authority signs an instruction that writes a new verified buffer into the
-program data account. If the authority is removed, the program becomes
-effectively immutable.
+| Step | Accounts to check | Args / data to check |
+| --- | --- | --- |
+| Create transaction | `multisig`, `creator`, `transaction`, `vault` | `transaction_index`, `vault_index`, `message.account_keys`, `message.instructions[].program_id_index`, `message.instructions[].account_indexes`, `message.instructions[].data`, `message.address_table_lookups` |
+| Create proposal | `multisig`, `proposal`, `creator` | `transaction_index`, proposal status seed/index |
+| Vote approve | `multisig`, `proposal`, `member` | vote value, proposal status, member identity |
+| Execute | `multisig`, `proposal`, `transaction`, `vault`, remaining accounts | `transaction_index`, `message.account_keys`, `message.instructions[].data`, lookup table contents |
 
-Using one wallet as the authority is simple and fragile. A multisig makes the
-authority a program-controlled account instead. Proposals describe the upgrade,
-members vote, and only after the threshold is met does the multisig execute the
-loader instruction.
-
-The useful security boundary is not "multisig exists". It is who can propose,
-who can vote, what threshold is required, whether the buffer was verified, and
-whether signers can understand the upgrade they are approving.
+Is anything insufficient?

@@ -10,9 +10,10 @@ type Props = {
 const siteTitle = 'pierre.build';
 const description =
   Astro.props.description ??
-  'Minimal notes and protocol work from Pierre, focused on Solana, signing UX, and low-level tooling.';
+  'Stuff from Pierre';
 const pageTitle = Astro.props.title ? `${Astro.props.title} - ${siteTitle}` : siteTitle;
 const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(/\/$/, '');
+const socialImage = new URL('/social-card.png', Astro.site).href;
 ---
 
 <!doctype html>
@@ -26,7 +27,13 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(/\/$/, ''
     <meta property="og:description" content={description} />
     <meta property="og:type" content={Astro.url.pathname.startsWith('/blog/') ? 'article' : 'website'} />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="pierre.build terminal-style social card" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content="pierre.build terminal-style social card" />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{pageTitle}</title>

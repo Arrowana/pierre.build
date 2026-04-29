@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">pierre.build social card</title>
+  <desc id="desc">A dark terminal-style social preview card for pierre.build.</desc>
+  <rect width="1200" height="630" fill="#1e1e2e"/>
+  <rect x="46" y="42" width="1108" height="546" rx="28" fill="#242438" stroke="#45475a" stroke-width="2"/>
+  <rect x="86" y="86" width="1028" height="72" rx="16" fill="#1e1e2e" stroke="#313244" stroke-width="2"/>
+  <circle cx="124" cy="122" r="10" fill="#f38ba8"/>
+  <circle cx="158" cy="122" r="10" fill="#f9e2af"/>
+  <circle cx="192" cy="122" r="10" fill="#a6e3a1"/>
+  <text x="238" y="132" fill="#9399b2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="26">pierre.build</text>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <text x="96" y="246" fill="#a6e3a1" font-size="34" font-weight="700">$ whoami</text>
+    <text x="96" y="328" fill="#f5c2e7" font-size="62" font-weight="800">Software Engineer,</text>
+    <text x="96" y="404" fill="#f5c2e7" font-size="62" font-weight="800">building on Solana.</text>
+    <text x="96" y="486" fill="#89dceb" font-size="30">Stuff from Pierre</text>
+  </g>
+
+  <g transform="translate(844 224)">
+    <rect width="232" height="232" rx="28" fill="#1e1e2e" stroke="#45475a" stroke-width="3"/>
+    <path d="M70 67l45 49-45 49" fill="none" stroke="#a6e3a1" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M132 166h58" fill="none" stroke="#89dceb" stroke-width="18" stroke-linecap="round"/>
+  </g>
+
+</svg>
